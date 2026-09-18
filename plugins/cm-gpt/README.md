@@ -10,7 +10,7 @@ agent system prompt.
 This works on both platforms because Claude Code and OpenAI's Codex/ChatGPT plugin system now share
 the open [Agent Plugins](https://agent-plugins.org) manifest format. Concretely:
 
-- `skills/cm-gpt/` is read as-is by both platforms — one skill file, no duplication.
+- `skills/ask/` is read as-is by both platforms — one skill file, no duplication.
 - `plugin.json` (root) + `mcp.json` (root) are the portable Agent Plugins manifests, used by
   Codex/ChatGPT.
 - `.claude-plugin/plugin.json` + `.mcp.json` are Claude Code's own manifest format. OpenAI's docs say
@@ -22,7 +22,7 @@ the open [Agent Plugins](https://agent-plugins.org) manifest format. Concretely:
 | Component | Name | Purpose |
 |---|---|---|
 | MCP server | `cm-gpt` | Remote streamable-HTTP connector to `https://criticalmanufacturing.ai/docs/mcp`. Provides `search_documentation` and `get_adjacent_chunks`. Same server, both platforms. |
-| Skill | `cm-gpt` | Search strategy, scope guardrails, citation format and answer discipline. Loads automatically on MES/CM questions, on both platforms. |
+| Skill | `ask` | Search strategy, scope guardrails, citation format and answer discipline. Loads automatically on MES/CM questions, on both platforms. |
 
 ## Setup — Claude Code / Cowork
 
@@ -74,8 +74,8 @@ confirming the OAuth handshake against `criticalmanufacturing.ai` still needs to
 ## Usage
 
 The skill triggers on its own for any Critical Manufacturing or MES question — no slash command
-needed. Users can also invoke it explicitly with `/cm-gpt`, which matches the name they already know
-the tool by.
+needed. Users can also invoke it explicitly with `/ask` (or `/cm-gpt:ask` if another plugin's skill
+also claims `/ask`).
 
 Examples that trigger it:
 

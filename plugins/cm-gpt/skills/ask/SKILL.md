@@ -1,5 +1,5 @@
 ---
-name: cm-gpt
+name: ask
 description: >
   CM GPT is Critical Manufacturing's documentation assistant for its MES platform. Use it for any
   question about Critical Manufacturing (the company) or its MES — features, configuration, APIs,

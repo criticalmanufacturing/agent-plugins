@@ -9,7 +9,7 @@ This is possible because both ecosystems now read the open
 
 | Path | Read by |
 |---|---|
-| `plugins/cm-gpt/skills/cm-gpt/SKILL.md` | Both — search strategy, scope, citation rules. One file, no duplication. |
+| `plugins/cm-gpt/skills/ask/SKILL.md` | Both — search strategy, scope, citation rules. One file, no duplication. |
 | `plugins/cm-gpt/plugin.json`, `plugins/cm-gpt/mcp.json` | ChatGPT / Codex (portable Agent Plugins manifests) |
 | `plugins/cm-gpt/.claude-plugin/plugin.json`, `plugins/cm-gpt/.mcp.json` | Claude Code / Cowork (Claude's own manifest format) |
 
@@ -31,7 +31,7 @@ plugins/
     .claude-plugin/plugin.json    # Claude Code manifest
     .mcp.json                     # Claude Code MCP config (includes OAuth client config)
     assets/logo.svg               # shared CM logo, referenced by both manifests
-    skills/cm-gpt/                # shared skill — read by both platforms
+    skills/ask/                   # shared skill — read by both platforms
     README.md
 dist/
   cm-gpt.plugin                   # packaged archive of plugins/cm-gpt, for HTTPS-hosted distribution
@@ -39,7 +39,7 @@ dist/
 
 ## Changing CM GPT's behavior
 
-Edit `plugins/cm-gpt/skills/cm-gpt/SKILL.md` — it's the single source both platforms read, so there's
+Edit `plugins/cm-gpt/skills/ask/SKILL.md` — it's the single source both platforms read, so there's
 nothing else to keep in sync. Bump `version` in both `plugin.json` and `.claude-plugin/plugin.json`
 when you do.
 
