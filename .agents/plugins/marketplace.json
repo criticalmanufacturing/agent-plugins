@@ -1,5 +1,5 @@
 {
-  "name": "critical-manufacturing",
+  "name": "cm-agent-plugins",
   "interface": {
     "displayName": "Critical Manufacturing"
   },
