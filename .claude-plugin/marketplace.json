@@ -1,8 +1,9 @@
 {
   "name": "critical-manufacturing",
   "owner": {
-    "name": "Critical Manufacturing IT"
+    "name": "Critical Manufacturing"
   },
+  "description": "CM Agent Plugins marketplace. Automate your CM experience!",
   "plugins": [
     {
       "name": "cm-gpt",
