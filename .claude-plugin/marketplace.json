@@ -1,0 +1,18 @@
+{
+  "name": "critical-manufacturing",
+  "owner": {
+    "name": "Critical Manufacturing IT"
+  },
+  "plugins": [
+    {
+      "name": "cm-gpt",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/criticalmanufacturing/agent-plugins.git",
+        "path": "plugins/cm-gpt",
+        "ref": "main"
+      },
+      "description": "CM GPT — MES documentation assistant"
+    }
+  ]
+}

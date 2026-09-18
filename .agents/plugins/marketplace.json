@@ -1,0 +1,22 @@
+{
+  "name": "critical-manufacturing",
+  "interface": {
+    "displayName": "Critical Manufacturing"
+  },
+  "plugins": [
+    {
+      "name": "cm-gpt",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/criticalmanufacturing/agent-plugins.git",
+        "path": "./plugins/cm-gpt",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

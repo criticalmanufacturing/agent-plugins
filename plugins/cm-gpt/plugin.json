@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cm-gpt",
+  "version": "0.1.1",
+  "description": "CM GPT — the Critical Manufacturing MES documentation assistant. Answers questions on MES features, configuration, APIs, architecture and supported technologies by searching official CM documentation, with citations.",
+  "author": {
+    "name": "Critical Manufacturing"
+  },
+  "homepage": "https://criticalmanufacturing.ai",
+  "keywords": [
+    "mes",
+    "critical-manufacturing",
+    "documentation",
+    "rag",
+    "cm-gpt"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "CM GPT",
+        "shortDescription": "Critical Manufacturing MES documentation assistant",
+        "longDescription": "Answers questions on Critical Manufacturing's MES platform — features, configuration, APIs, architecture, supported technologies, licensing, releases, known issues, and training — by searching official CM documentation and citing sources.",
+        "developerName": "Critical Manufacturing",
+        "category": "Productivity",
+        "capabilities": ["Read"],
+        "websiteURL": "https://criticalmanufacturing.ai",
+        "defaultPrompt": [
+          "Ask CM GPT how to configure a material dispatch rule.",
+          "Ask CM GPT what changed in the Data Dictionary in the latest MES release.",
+          "Ask CM GPT whether MES supports OPC UA."
+        ],
+        "brandColor": "#00558C",
+        "composerIcon": "./assets/logo.svg",
+        "logo": "./assets/logo.svg"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "cm-gpt": {
+      "type": "http",
+      "url": "https://criticalmanufacturing.ai/docs/mcp",
+      "oauth": {
+        "clientId": "CMGPT",
+        "scope": "IAM-CMGPT-Docs",
+        "appendOfflineAccess": true
+      }
+    }
+  }
+}

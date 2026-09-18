@@ -1,0 +1,20 @@
+{
+  "name": "cm-gpt",
+  "displayName": "CM GPT",
+  "version": "0.1.1",
+  "description": "CM GPT — the Critical Manufacturing MES documentation assistant. Answers questions on MES features, configuration, APIs, architecture and supported technologies by searching official CM documentation, with citations.",
+  "author": {
+    "name": "Critical Manufacturing"
+  },
+  "homepage": "https://criticalmanufacturing.ai",
+  "keywords": [
+    "mes",
+    "critical-manufacturing",
+    "documentation",
+    "rag",
+    "cm-gpt"
+  ],
+  "metadata": {
+    "icon": "assets/logo.svg"
+  }
+}
