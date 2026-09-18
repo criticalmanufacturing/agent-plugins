@@ -1,14 +1,10 @@
 ---
 name: ask
 description: >
-  CM GPT is Critical Manufacturing's documentation assistant for its MES platform. Use it for any
-  question about Critical Manufacturing (the company) or its MES — features, configuration, APIs,
-  architecture, supported technologies, licensing, releases, known issues, or training. Triggers on
-  "CM GPT", "ask CM GPT", "check the MES docs", "MES documentation", "how do I configure X in MES",
-  "does MES support X", "what changed in version X", and on references to the Documentation Portal,
-  Developer Portal, Customer Portal, Information Center, Training Portal, the Data Dictionary, a named
-  MES module, an MES error code, or an MES release version. Searches official CM documentation through
-  the CM GPT connector and answers with citations.
+  Ask CM GPT for answers about Critical Manufacturing's MES — configuration, APIs, architecture,
+  features, releases, known issues, and training. It searches official CM documentation across the
+  Documentation Portal, Developer Portal, Customer Portal, Information Center, and Training Portal,
+  then answers with source citations.
 metadata:
   version: "0.1.1"
   author: "Critical Manufacturing"
