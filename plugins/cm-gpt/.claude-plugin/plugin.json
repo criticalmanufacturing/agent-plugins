@@ -13,8 +13,5 @@
     "documentation",
     "rag",
     "cm-gpt"
-  ],
-  "metadata": {
-    "icon": "assets/logo.svg"
-  }
+  ]
 }
