@@ -30,14 +30,14 @@ Uses `.mcp.json`. The connector uses OAuth. On first use in a session, the user 
 in; the plugin is pre-configured with:
 
 - **Client ID:** `CMGPT`
-- **Scope:** `IAM-CMGPT-Docs`
+- **Scopes:** `IAM-CMGPT-Docs`
 - **Transport:** streamable HTTP
 
 No environment variables or secrets are stored in the plugin.
 
-`appendOfflineAccess` is set to `true` so the sign-in requests a refresh token and users are not
-re-prompted every session. If the CM identity provider does not issue `offline_access` for this
-client, remove that line from `.mcp.json`.
+Claude Code automatically appends `offline_access` to the request when the identity provider
+advertises it in `scopes_supported`, so users get a refresh token and are not re-prompted every
+session — no manual config needed for that.
 
 ## Setup — ChatGPT / Codex
 
@@ -165,6 +165,6 @@ read-only, so auto-approving them removes a confirmation prompt per search. Set 
 
 ## Versioning
 
-Current version: `0.1.1`. Bump the `version` field in **both** `.claude-plugin/plugin.json` and the
+Current version: `0.1.2`. Bump the `version` field in **both** `.claude-plugin/plugin.json` and the
 portable `plugin.json` on every change to the skill or connector config, so installed copies can be
 told apart during rollout on either platform.

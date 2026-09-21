@@ -5,8 +5,7 @@
       "url": "https://criticalmanufacturing.ai/docs/mcp",
       "oauth": {
         "clientId": "CMGPT",
-        "scope": "IAM-CMGPT-Docs",
-        "appendOfflineAccess": true
+        "scopes": "IAM-CMGPT-Docs"
       }
     }
   }
