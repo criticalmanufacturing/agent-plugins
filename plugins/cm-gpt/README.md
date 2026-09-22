@@ -41,13 +41,14 @@ session — no manual config needed for that.
 
 ## Setup — ChatGPT / Codex
 
-Uses the root `plugin.json` + `mcp.json` (portable Agent Plugins manifests). Per
-[OpenAI's MCP authentication docs](https://developers.openai.com/plugins), OAuth for a plugin's MCP
-server is negotiated by the server itself (standard MCP OAuth discovery, e.g. Client ID Metadata
-Documents or dynamic client registration) when a user connects — it's not declared in `mcp.json`, so
-no client ID/secret lives in this manifest. The CM GPT MCP server already handles OAuth this way for
-the Claude connector above; ChatGPT/Codex users hitting the same server should get an OAuth prompt the
-same way.
+Uses the root `plugin.json` + `mcp.json` (portable Agent Plugins manifests). The connector declares
+the CM GPT OAuth client ID and scope required by the server:
+
+- **Client ID:** `CMGPT`
+- **Scopes:** `IAM-CMGPT-Docs`
+
+No client secret is stored in the plugin. Users are prompted to complete OAuth when the connector is
+first used.
 
 To register it locally for testing (repo-scoped): this repo's [`.agents/plugins/marketplace.json`](../../.agents/plugins/marketplace.json)
 already lists this plugin. In the ChatGPT desktop app or Codex CLI:
@@ -67,9 +68,9 @@ Alternatively, in ChatGPT: Settings → Security and login → turn on Developer
 add the MCP server URL directly (`https://criticalmanufacturing.ai/docs/mcp`) for a personal plugin
 without going through the marketplace file.
 
-**Unverified:** this hasn't been installed end-to-end in a live ChatGPT/Codex environment yet — the
-manifest shapes above follow OpenAI's published examples exactly, but actually connecting and
-confirming the OAuth handshake against `criticalmanufacturing.ai` still needs to be tested.
+**Unverified:** this hasn't been installed end-to-end in a live ChatGPT/Codex environment yet —
+actually connecting and confirming the OAuth handshake against `criticalmanufacturing.ai` still needs
+to be tested.
 
 ## Usage
 
@@ -165,6 +166,6 @@ read-only, so auto-approving them removes a confirmation prompt per search. Set 
 
 ## Versioning
 
-Current version: `0.1.2`. Bump the `version` field in **both** `.claude-plugin/plugin.json` and the
+Current version: `0.1.3`. Bump the `version` field in **both** `.claude-plugin/plugin.json` and the
 portable `plugin.json` on every change to the skill or connector config, so installed copies can be
 told apart during rollout on either platform.
