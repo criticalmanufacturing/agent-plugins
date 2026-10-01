@@ -1,0 +1,37 @@
+{
+  "name": "cm-gpt",
+  "version": "0.1.4",
+  "description": "CM GPT \u2014 the Critical Manufacturing MES documentation assistant. Answers questions on MES features, configuration, APIs, architecture and supported technologies by searching official CM documentation, with citations.",
+  "author": {
+    "name": "Critical Manufacturing"
+  },
+  "homepage": "https://criticalmanufacturing.ai",
+  "keywords": [
+    "mes",
+    "critical-manufacturing",
+    "documentation",
+    "rag",
+    "cm-gpt"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "CM GPT",
+    "shortDescription": "Critical Manufacturing MES documentation assistant",
+    "longDescription": "Answers questions on Critical Manufacturing's MES platform \u2014 features, configuration, APIs, architecture, supported technologies, licensing, releases, known issues, and training \u2014 by searching official CM documentation and citing sources.",
+    "developerName": "Critical Manufacturing",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://criticalmanufacturing.ai",
+    "defaultPrompt": [
+      "Ask CM GPT how to configure a material dispatch rule.",
+      "Ask CM GPT what changed in the Data Dictionary in the latest MES release.",
+      "Ask CM GPT whether MES supports OPC UA."
+    ],
+    "brandColor": "#00558C",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

@@ -7,15 +7,14 @@ Cowork and ChatGPT / Codex, from the same plugin folder. Bundles the connector t
 server together with the search-and-answer instructions that were previously carried as a LibreChat
 agent system prompt.
 
-This works on both platforms because Claude Code and OpenAI's Codex/ChatGPT plugin system now share
-the open [Agent Plugins](https://agent-plugins.org) manifest format. Concretely:
+This plugin uses supported platform-specific manifests with shared skills and MCP settings:
 
 - `skills/ask/` is read as-is by both platforms — one skill file, no duplication.
-- `plugin.json` (root) + `mcp.json` (root) are the portable Agent Plugins manifests, used by
-  Codex/ChatGPT.
-- `.claude-plugin/plugin.json` + `.mcp.json` are Claude Code's own manifest format. OpenAI's docs say
-  it also accepts these as a legacy/compatibility fallback, but this repo keeps both pairs explicit
-  rather than relying on that fallback.
+- `.codex-plugin/plugin.json` declares `skills: "./skills/"` and
+  `mcpServers: "./.mcp.json"` for OpenAI.
+- `.claude-plugin/plugin.json` is Claude's manifest; Claude uses the same `.mcp.json`.
+- There is deliberately no root portable `plugin.json` or `mcp.json`. The portable MCP schema
+  rejects `oauth`, and portable components take precedence over compatibility declarations.
 
 ## Components
 
@@ -41,26 +40,33 @@ session — no manual config needed for that.
 
 ## Setup — ChatGPT / Codex
 
-Uses the root `plugin.json` + `mcp.json` (portable Agent Plugins manifests). The connector declares
-the CM GPT OAuth client ID and scope required by the server:
+Uses `.codex-plugin/plugin.json`, which explicitly loads `.mcp.json`. This is the supported
+[Codex compatibility package format](https://developers.openai.com/plugins/deploy/submission#codex-format).
+The shared HTTP connector declares the pre-registered OAuth client required by the server:
 
 - **Client ID:** `CMGPT`
 - **Scopes:** `IAM-CMGPT-Docs`
 
-No client secret is stored in the plugin. Users are prompted to complete OAuth when the connector is
-first used.
+OpenAI performs the OAuth authorization-code flow with PKCE (`S256`). No client secret is stored
+in the plugin. Users are prompted to complete OAuth when the connector is first used. The provider
+must accept the OpenAI connection's redirect URI and token exchange for `CMGPT`.
+
+Refresh or reimport version `0.1.4`, including the hidden `.codex-plugin/`, `.claude-plugin/`, and
+`.mcp.json` files. Public portal submissions containing MCP servers must use **With MCP**;
+**Skills only** strips MCP configuration. See
+[OpenAI package checks](https://developers.openai.com/plugins/deploy/submission-errors).
 
 To register it locally for testing (repo-scoped): this repo's [`.agents/plugins/marketplace.json`](../../.agents/plugins/marketplace.json)
 already lists this plugin. In the ChatGPT desktop app or Codex CLI:
 
 ```bash
-codex plugin marketplace add ./cmgpt-plugin # or point at this repo's git URL once hosted
+codex plugin marketplace add https://github.com/criticalmanufacturing/agent-plugins.git
 ```
 
 Then enable it in `.codex/config.toml`:
 
 ```toml
-[plugins."cm-gpt@critical-manufacturing"]
+[plugins."cm-gpt@cm-agent-plugins"]
 enabled = true
 ```
 
@@ -166,6 +172,6 @@ read-only, so auto-approving them removes a confirmation prompt per search. Set 
 
 ## Versioning
 
-Current version: `0.1.3`. Bump the `version` field in **both** `.claude-plugin/plugin.json` and the
-portable `plugin.json` on every change to the skill or connector config, so installed copies can be
+Current version: `0.1.4`. Bump the `version` field in **both** `.claude-plugin/plugin.json` and
+`.codex-plugin/plugin.json` on every change to the skill or connector config, so installed copies can be
 told apart during rollout on either platform.
