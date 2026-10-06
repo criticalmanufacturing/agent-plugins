@@ -12,7 +12,7 @@ The OpenAI manifest explicitly loads the same OAuth-capable MCP configuration us
 | `plugins/cm-gpt/.codex-plugin/plugin.json`, `plugins/cm-gpt/.mcp.json` | ChatGPT / Codex (explicit MCP/OAuth configuration) |
 | `plugins/cm-gpt/.claude-plugin/plugin.json`, `plugins/cm-gpt/.mcp.json` | Claude Code / Cowork (Claude's own manifest format) |
 
-Both manifests use the same MCP configuration (`https://criticalmanufacturing.ai/docs/mcp`), so
+Both manifests use the same MCP configuration (`https://criticalmanufacturing.ai/protected/docs/mcp`), so
 there's one backend and one skill to maintain regardless of which platform a user is on.
 
 See [`plugins/cm-gpt/README.md`](plugins/cm-gpt/README.md) for setup on each platform — it has

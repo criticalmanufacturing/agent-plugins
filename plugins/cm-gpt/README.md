@@ -20,7 +20,7 @@ This plugin uses supported platform-specific manifests with shared skills and MC
 
 | Component | Name | Purpose |
 |---|---|---|
-| MCP server | `cm-gpt` | Remote streamable-HTTP connector to `https://criticalmanufacturing.ai/docs/mcp`. Provides `search_documentation` and `get_adjacent_chunks`. Same server, both platforms. |
+| MCP server | `cm-gpt` | Remote streamable-HTTP connector to `https://criticalmanufacturing.ai/protected/docs/mcp`. Provides `search_documentation` and `get_adjacent_chunks`. Same server, both platforms. |
 | Skill | `ask` | Search strategy, scope guardrails, citation format and answer discipline. Loads automatically on MES/CM questions, on both platforms. |
 
 ## Setup — Claude Code / Cowork
@@ -71,7 +71,7 @@ enabled = true
 ```
 
 Alternatively, in ChatGPT: Settings → Security and login → turn on Developer mode → ChatGPT Plugins →
-add the MCP server URL directly (`https://criticalmanufacturing.ai/docs/mcp`) for a personal plugin
+add the MCP server URL directly (`https://criticalmanufacturing.ai/protected/docs/mcp`) for a personal plugin
 without going through the marketplace file.
 
 **Unverified:** this hasn't been installed end-to-end in a live ChatGPT/Codex environment yet —

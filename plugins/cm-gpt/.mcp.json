@@ -2,7 +2,7 @@
   "mcpServers": {
     "cm-gpt": {
       "type": "http",
-      "url": "https://criticalmanufacturing.ai/docs/mcp",
+      "url": "https://criticalmanufacturing.ai/protected/docs/mcp",
       "oauth": {
         "clientId": "CMGPT",
         "scopes": "IAM-CMGPT-Docs"
