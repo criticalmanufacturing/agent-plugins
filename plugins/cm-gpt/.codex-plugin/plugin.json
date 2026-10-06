@@ -1,6 +1,6 @@
 {
   "name": "cm-gpt",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "CM GPT \u2014 the Critical Manufacturing MES documentation assistant. Answers questions on MES features, configuration, APIs, architecture and supported technologies by searching official CM documentation, with citations.",
   "author": {
     "name": "Critical Manufacturing"

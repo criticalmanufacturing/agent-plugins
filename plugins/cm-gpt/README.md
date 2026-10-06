@@ -51,7 +51,7 @@ OpenAI performs the OAuth authorization-code flow with PKCE (`S256`). No client 
 in the plugin. Users are prompted to complete OAuth when the connector is first used. The provider
 must accept the OpenAI connection's redirect URI and token exchange for `CMGPT`.
 
-Refresh or reimport version `0.1.4`, including the hidden `.codex-plugin/`, `.claude-plugin/`, and
+Refresh or reimport version `0.1.5`, including the hidden `.codex-plugin/`, `.claude-plugin/`, and
 `.mcp.json` files. Public portal submissions containing MCP servers must use **With MCP**;
 **Skills only** strips MCP configuration. See
 [OpenAI package checks](https://developers.openai.com/plugins/deploy/submission-errors).
@@ -172,6 +172,6 @@ read-only, so auto-approving them removes a confirmation prompt per search. Set 
 
 ## Versioning
 
-Current version: `0.1.4`. Bump the `version` field in **both** `.claude-plugin/plugin.json` and
+Current version: `0.1.5`. Bump the `version` field in **both** `.claude-plugin/plugin.json` and
 `.codex-plugin/plugin.json` on every change to the skill or connector config, so installed copies can be
 told apart during rollout on either platform.
