@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "cm-customerportal": {
+      "type": "http",
+      "url": "https://portal.criticalmanufacturing.com/mcp",
+      "oauth": {
+        "clientId": "Applications",
+        "scopes": "MES"
+      }
+    }
+  }
+}

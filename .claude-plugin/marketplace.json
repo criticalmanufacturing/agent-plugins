@@ -14,6 +14,16 @@
         "ref": "main"
       },
       "description": "CM GPT — MES documentation assistant"
+    },
+    {
+      "name": "cm-customerportal",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/criticalmanufacturing/agent-plugins.git",
+        "path": "plugins/cm-customerportal",
+        "ref": "main"
+      },
+      "description": "CM Customer Portal — tickets, licenses, environments and known issues"
     }
   ]
 }

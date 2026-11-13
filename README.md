@@ -1,8 +1,14 @@
-# CM GPT
+# CM Agent Plugins
 
-CM GPT is Critical Manufacturing's MES documentation assistant. This repo has a single plugin,
-[`plugins/cm-gpt`](plugins/cm-gpt), that runs on **both** Claude Code/Cowork and ChatGPT/Codex from
-one folder — no per-platform copies of the assistant's behavior.
+Critical Manufacturing's Agent Plugins. Each plugin under [`plugins/`](plugins) runs on **both**
+Claude Code/Cowork and ChatGPT/Codex from one folder, with no per-platform copies of its behavior.
+
+| Plugin | What it does |
+|---|---|
+| [`plugins/cm-gpt`](plugins/cm-gpt) | CM GPT, Critical Manufacturing's MES documentation assistant. |
+| [`plugins/cm-customerportal`](plugins/cm-customerportal) | Customer Portal: tickets, ticket and reply drafts, licenses, environment deployment logs, known issues and enhancement requests (`https://portal.criticalmanufacturing.com/mcp`). Uses cm-gpt's documentation search when that plugin is also installed. |
+
+Both plugins follow the same layout, shown here for cm-gpt.
 
 The OpenAI manifest explicitly loads the same OAuth-capable MCP configuration used by Claude:
 
@@ -31,6 +37,8 @@ plugins/
     assets/logo.svg               # shared CM logo, referenced by both manifests
     skills/ask/                   # shared skill — read by both platforms
     README.md
+  cm-customerportal/              # same layout; skills: check-tickets, open-ticket, reply-to-ticket,
+                                  # licenses, environment-logs, known-issues, enhancement-requests
 dist/
   cm-gpt.plugin                   # packaged archive of plugins/cm-gpt, for HTTPS-hosted distribution
 ```

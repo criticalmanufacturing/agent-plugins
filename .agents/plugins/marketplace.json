@@ -17,6 +17,20 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "cm-customerportal",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/criticalmanufacturing/agent-plugins.git",
+        "path": "./plugins/cm-customerportal",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }

@@ -1,0 +1,40 @@
+{
+  "name": "cm-customerportal",
+  "version": "0.1.0",
+  "description": "Critical Manufacturing Customer Portal — check support tickets, draft new tickets and replies, review licenses and upcoming expirations, explain customer environment deployment logs, and search known issues and enhancement requests, acting as the signed-in portal user.",
+  "author": {
+    "name": "Critical Manufacturing"
+  },
+  "homepage": "https://portal.criticalmanufacturing.com",
+  "keywords": [
+    "mes",
+    "critical-manufacturing",
+    "customer-portal",
+    "support",
+    "tickets",
+    "licenses",
+    "devops-center",
+    "known-issues"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "CM Customer Portal",
+    "shortDescription": "Critical Manufacturing Customer Portal: tickets, licenses, environments, known issues",
+    "longDescription": "Works with the Critical Manufacturing Customer Portal as the signed-in user: check support tickets and their conversations, draft new tickets and replies for submission in the portal, review licenses and which expire in the next 30/60/90 days, explain failed customer environment deployments from their logs, and search known issues and enhancement requests.",
+    "developerName": "Critical Manufacturing",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://portal.criticalmanufacturing.com",
+    "defaultPrompt": [
+      "Show my open Customer Portal tickets.",
+      "Which of our CM licenses expire in the next 90 days?",
+      "Why did the last deployment of our production environment fail?"
+    ],
+    "brandColor": "#00558C",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg"
+  }
+}
